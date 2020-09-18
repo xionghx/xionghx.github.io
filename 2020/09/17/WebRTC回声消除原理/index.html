@@ -10,21 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=7.4.0">
-  <link rel="mask-icon" href="/public/images/logo.svg?v=7.4.0" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
 
-<link rel="stylesheet" href="/public/css/main.css?v=7.4.0">
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 
 
-<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/public/',
+    root: '/',
     scheme: 'Muse',
     version: '7.4.0',
     exturl: false,
@@ -69,7 +69,7 @@
 <meta property="og:description" content="在语音通话中所指的回声有两种，电路回声和声学回声，随着目前回声消除技术的发展，电路回声已经被很好的解决，所以现在回声消除的工作重心主要放在了解决声学回声消除的方法上。GIPS公司给WebRTC设计的回声消除算法是比较先进且效果较好的一种，我们所熟悉的腾讯QQ中就使用了这项技术，GIPS公司之前一直紧握着这项技术专利，直到Google将GIPS公司收购并且完全开源WebRTC，我们才有机会学习研究回">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/09/17/WebRTC回声消除原理/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png">
-<meta property="og:updated_time" content="2020-09-18T02:30:08.979Z">
+<meta property="og:updated_time" content="2020-09-18T02:30:52.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebRTC回声消除原理">
 <meta name="twitter:description" content="在语音通话中所指的回声有两种，电路回声和声学回声，随着目前回声消除技术的发展，电路回声已经被很好的解决，所以现在回声消除的工作重心主要放在了解决声学回声消除的方法上。GIPS公司给WebRTC设计的回声消除算法是比较先进且效果较好的一种，我们所熟悉的腾讯QQ中就使用了这项技术，GIPS公司之前一直紧握着这项技术专利，直到Google将GIPS公司收购并且完全开源WebRTC，我们才有机会学习研究回">
@@ -133,7 +133,7 @@
   <div class="site-meta">
 
     <div>
-      <a href="/public/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">xionghx</span>
         <span class="logo-line-after"><i></i></span>
@@ -162,7 +162,7 @@
       
     
 
-    <a href="/public/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
       
@@ -173,7 +173,7 @@
       
     
 
-    <a href="/public/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
   </ul>
@@ -203,12 +203,12 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/public/2020/09/17/WebRTC回声消除原理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/WebRTC回声消除原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xionghx">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/public/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-18 10:30:08" itemprop="dateModified" datetime="2020-09-18T10:30:08+08:00">2020-09-18</time>
+                <time title="Modified: 2020-09-18 10:30:52" itemprop="dateModified" datetime="2020-09-18T10:30:52+08:00">2020-09-18</time>
               </span>
             
           
@@ -265,6 +265,7 @@
 <p><a href="https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png" target="_blank" rel="noopener">https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png</a></p>
 <p><a href="https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png" target="_blank" rel="noopener">https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png</a></p>
 <p><a href="https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png" target="_blank" rel="noopener">https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png</a></p>
+<p><a href="https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png" target="_blank" rel="noopener">https://blog.xionghx.com/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7-0394866.png</a></p>
 
     </div>
 
@@ -281,7 +282,7 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/public/2020/09/17/WebRTC延迟分析/" rel="next" title="WebRTC延迟分析">
+                <a href="/2020/09/17/WebRTC延迟分析/" rel="next" title="WebRTC延迟分析">
                   <i class="fa fa-chevron-left"></i> WebRTC延迟分析
                 </a>
               
@@ -349,7 +350,7 @@
   <nav class="site-state motion-element">
       <div class="site-state-item site-state-posts">
         
-          <a href="/public/archives/">
+          <a href="/archives/">
         
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
@@ -412,12 +413,12 @@
   
 
 
-  <script src="/public/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/public/js/utils.js?v=7.4.0"></script><script src="/public/js/motion.js?v=7.4.0"></script>
-<script src="/public/js/schemes/muse.js?v=7.4.0"></script>
-<script src="/public/js/next-boot.js?v=7.4.0"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
 
 
 
