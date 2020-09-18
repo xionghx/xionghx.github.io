@@ -236,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-18 16:30:11" itemprop="dateModified" datetime="2020-09-18T16:30:11+08:00">2020-09-18</time>
+                <time title="Modified: 2020-09-18 16:30:42" itemprop="dateModified" datetime="2020-09-18T16:30:42+08:00">2020-09-18</time>
               </span>
             
           
@@ -254,7 +254,7 @@
       
           <p>在语音通话中所指的回声有两种，电路回声和声学回声，随着目前回声消除技术的发展，电路回声已经被很好的解决，所以现在回声消除的工作重心主要放在了解决声学回声消除的方法上。GIPS公司给WebRTC设计的回声消除算法是比较先进且效果较好的一种，我们所熟悉的腾讯QQ中就使用了这项技术，GIPS公司之前一直紧握着这项技术专利，直到Google将GIPS公司收购并且完全开源WebRTC，我们才有机会学习研究回声消除算法。WebRTC源代码中设计了两个回声消除模块，AEC(Acoustic Echo Canceller)和AECM(Acoustic Echo Canceller Mobile)，AEC是在电脑端使用的回声消除器，而AECM是在移动端使用。由于电脑与移动设备的差别比较明显，在处理速度上，编解码器的性能上和内存方面都有着较大的差异。本文章主要来简单介绍一下AECM模块。</p>
 <p>在VoIP实时语音通话中，之所以会产生声学回声的原因是，近端通话者的声音被自己的麦克风拾取后通过网络传到远端，远端扬声器播放出来的声音被麦克风拾取后通过网络又重新发回近端。加上网络和数据处理等各种延迟的影响，使得近端通话者能够从扬声器中听到自己的刚才所说的话，就产生了回声。相比于电路回声，声学回声会被周围物体的改变而影响回声路径；而且VoIP出了应用于PC等固定终端，还可以应用与手机、平板等智能移动端，通话过程中，主被叫很可能都会大幅度改变位置从而改变回声路径，所以声学回声的特点是多路径且时变的。</p>
-<p><img src="////7.png" alt="10"></p>
+<p><img src="/.com//7.png" alt="10"></p>
 <p>WebRTC中所采用的回声消除器AECM的结构如图所示。其中自适应滤波器起到了最核心的作用，其利用抽头系数估计出回声路径，并用误差信号作为反馈区自适应的调节系数。其详细过程为远端呼叫者在远端讲话产生的远端信号被麦克风采集，经IP网络传输传送到近端。近端的回声消除器即自适应滤波器会保存一定长度的远端信号到缓冲区。被近端的扬声器播出，经过多次反射形成回声信号。该回声信号和近端语音一起被近端麦克风采集，送往内部的回声消除器。该回声消除器找到之前保存的参考样本，与其滤波器的系数矩阵相乘，产生回声的估计值，并将其从近端信号中减去。处理过的信号被发送至远端，最终听到的信号为。误差信号反馈给自适应滤波器，自适应滤波器根据其大小调整滤波系数。就这样不断反馈，直到为0，回声被消除。</p>
 <p><a href="https://blog.xionghx.com/.com//7.png" target="_blank" rel="noopener">https://blog.xionghx.com/.com//7.png</a></p>
 <p><a href="https://blog.xionghx.com/source/_posts/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7.png" target="_blank" rel="noopener">https://blog.xionghx.com/source/_posts/WebRTC%E5%9B%9E%E5%A3%B0%E6%B6%88%E9%99%A4%E5%8E%9F%E7%90%86/7.png</a></p>
